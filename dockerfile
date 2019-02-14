@@ -6,3 +6,4 @@ MAINTAINER Daniel Mendes
 #RUN Permite chamar algum comando antes de dar o start do ENTRYPOINT
 ENTRYPOINT [ "echo" , "Hello World! =)" ]
 #EXPOSE porta que será exposta no container
+#CMD Parâmetros extras para o ENTRYPOINT []
