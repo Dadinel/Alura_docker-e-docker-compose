@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+  nomequalquer1:
+    build:
+      dockerfile: ./dockerfile
+      context: .
+    image: dadinel/echohelloworld
+    container_name: dan_hello_world1
+    ports:
+      - "80:80"
+    networks:
+      - test-helloworld
+    depends_on:
+      - "xisto"
+
+  nomequalquer2:
+    build:
+      dockerfile: ./dockerfile
+      context: .
+    image: dadinel/echohelloworld
+    container_name: dan_hello_world2
+    ports:
+      - "81:80"
+    networks:
+      - test-helloworld
+    depends_on:
+      - "nomequalquer1"
+networks:
+  test-helloworld:
+    driver: bridge
